@@ -1,0 +1,40 @@
+/*1. Create a structure Student in C with student name, student roll number and student 
+address as its data members. Create the variable of type student and print the values. 
+2. Modify the above program to implement arrays of structure. Create an array of 5 
+students and print their values.*/
+
+#include <stdio.h>
+#include <string.h>
+
+struct Student      // Creation of the structure Student
+{
+    char name[99];
+    char roll_no[20];
+    char address[99];
+};
+
+
+int main(){         // Driver Function
+
+    struct Student students[3];
+    for (int i = 0; i < 3; i++)         //Loop for taking inputs from the user
+    {
+        printf("Enter name: ");
+        scanf("%s", students[i].name);
+
+        printf("Enter roll no.: ");
+        scanf("%s", students[i].roll_no);
+
+        printf("Enter address: ");
+        scanf("%s", students[i].address);
+
+    }
+    
+    printf("All aquired records:\n\n\n\n");
+    for (int i = 0; i < 3; i++)         //Loop for printing output
+    {       
+        printf("Name: %s\n", students[i].name);
+        printf("Roll No: %s\n", students[i].roll_no);
+        printf("Address: %s\n", students[i].address);
+    }
+}
