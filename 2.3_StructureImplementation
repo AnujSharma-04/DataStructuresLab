@@ -1,0 +1,57 @@
+/* Create a structure Organization with organization name and organization ID as its data
+members. Next, create another structure Employee that is nested in structure
+Organization with employee ID, employee salary and employee name as its data
+members. Write a program in such a way that there are two organizations and each of
+these contains two employees. */
+
+
+#include <stdio.h>
+#include <string.h>
+
+struct Employee                                              //creation of the required structures
+{
+	int emp_id;
+	int salary;
+	char emp_name[20];
+};
+
+struct Organization {
+	char org_name[20];
+	int org_id;
+
+	struct Employee employees[2];
+};
+
+int main() {
+
+	struct Organization orgs[2];                             //Converting Structure Organisation to array in order to use it multiple times in a loop
+
+	for (int i = 0; i <= 1; i++)                             //Input For Organistaion and other details
+	{
+		printf("Enter Org. name: ");
+		scanf("%s", orgs[i].org_name);
+		printf("Enter Org ID: ");
+		scanf("%d", &orgs[i].org_id);
+		for(int j = 0; j<2; j++) {
+			printf("Enter employee name: ");
+			scanf("%s", orgs[i].employees[i].emp_name);
+			printf("Enter employee ID: ");
+			scanf("%d", &orgs[i].employees[i].emp_id);
+			printf("Enter employee salary: ");
+			scanf("%d", &orgs[i].employees[i].salary);
+		}
+	}
+
+	for (int i = 0; i <= 1; i++)                            //Loop for printing output
+	{
+		printf("Organization Name: %s\n", orgs[i].org_name);
+		printf("Organization ID: %d\n", orgs[i].org_id);
+		for(int j= 0; j<2; j++)
+		{
+			printf("Employee Name: %s\n", orgs[i].employees[i].emp_name);
+			printf("Employee Id: %d\n", orgs[i].employees[i].emp_id);
+			printf("Employee Salary: %d\n", orgs[i].employees[i].salary);
+		}
+	}
+
+}
